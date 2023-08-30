@@ -31,6 +31,9 @@ public:
     	}
     }
 
+    void InsertGlobalList(vector<int> currentPath, int hopCount);
+
+
 
 
     pair<int,vector<vector<int>>> getGlobalPath() { return m_globalPathList; }
