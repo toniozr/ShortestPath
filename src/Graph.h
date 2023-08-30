@@ -33,7 +33,7 @@ public:
 
     void InsertGlobalList(vector<int> currentPath, int hopCount);
 
-
+    void ShortestPaths(vector<bool> visitedNodes, int hopCount, vector<int> currentPath, int currentNode, int finalNode);
 
 
     pair<int,vector<vector<int>>> getGlobalPath() { return m_globalPathList; }

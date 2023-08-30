@@ -25,6 +25,27 @@ void Graph::InsertGlobalList(vector<int> currentPath, int hopCount)
 	return;
 }
 
+void Graph::ShortestPaths(vector<bool> visitedNodes, int hopCount, vector<int> currentPath,
+		int currentNode, int finalNode)
+{
+	visitedNodes[currentNode] = true;
+	hopCount++;
+	currentPath.push_back(currentNode);
+
+	if(currentNode == finalNode)
+		InsertGlobalList(currentPath, hopCount);
+	else
+	{
+		for(int i = 0; i < m_numVertices; i++)
+		{
+			if(m_adjacencyMatrix[currentNode][i] == 1 && !visitedNodes[i])
+				ShortestPaths(visitedNodes, hopCount, currentPath, i, finalNode);
+
+		}
+	}
+	return;
+}
+
 
 
 
